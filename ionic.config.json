@@ -1,0 +1,7 @@
+{
+  "name": "sc2-ranked",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
