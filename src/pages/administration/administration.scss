@@ -1,0 +1,12 @@
+page-administration {
+    .admin-race-selector-container {
+        display: flex;
+        justify-content: space-around;
+        button {
+            width: 100%;
+        }
+        .race-selected-label {
+            font-weight: bold;
+        }
+    }
+}

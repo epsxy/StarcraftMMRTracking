@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Upload a game</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <p>
+    You can upload a Starcraft game here and save it.
+  </p>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" (ionChange)="validateForm()" [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Race</ion-label>
+    <ion-select (ionChange)="validateForm()" [(ngModel)]="race">
+      <ion-option value="Protoss">Protoss</ion-option>
+      <ion-option value="Zerg">Zerg</ion-option>
+      <ion-option value="Terran">Terran</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Oppponent Race</ion-label>
+      <ion-select (ionChange)="validateForm()" [(ngModel)]="opponentRace">
+        <ion-option value="Protoss">Protoss</ion-option>
+        <ion-option value="Zerg">Zerg</ion-option>
+        <ion-option value="Terran">Terran</ion-option>
+      </ion-select>
+    </ion-item>
+
+  <ion-item>
+    <ion-label>Your MMR</ion-label>
+    <ion-input type="number" (ionChange)="validateForm()" [(ngModel)]="mmr"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Opponent MMR</ion-label>
+    <ion-input type="number" (ionChange)="validateForm()" [(ngModel)]="opponentMmr"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Victory</ion-label>
+    <ion-toggle (ionChange)="validateForm()" [(ngModel)]="isWon">Victory</ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Game length</ion-label>
+    <ion-datetime displayFormat="HH:mm:ss" (ionChange)="validateForm()" [(ngModel)]="length"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>APM</ion-label>
+    <ion-input type="number" (ionChange)="validateForm()" [(ngModel)]="apm"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>SPM</ion-label>
+    <ion-input type="number" (ionChange)="validateForm()" [(ngModel)]="spm"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Supply block time</ion-label>
+    <ion-datetime displayFormat="mm:ss" (ionChange)="validateForm()" [(ngModel)]="supplyBlock"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Spending quotient</ion-label>
+    <ion-input type="number" (ionChange)="validateForm()" [(ngModel)]="spendingQuotient"></ion-input>
+  </ion-item>
+
+  <button ion-button full (click)="saveGame()" [disabled]="isButtonDisabled()">Add the game</button>
+  {{game}}
+  {{res}}
+</ion-content>

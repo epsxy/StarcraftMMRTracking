@@ -9,13 +9,29 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
+    <ion-card *ngFor="let game of games" (click)="selectCard(game)">
+      <ion-card-header [class.won-game]="game.isWon" [class.lost-game]="!game.isWon">
+        <span>{{game.race}} - {{game.opponentRace}}</span>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-row>
+              <ion-col col-6>Date: {{game.date}}</ion-col>
+              <ion-col col-6>Game duration: {{game.mmr}}</ion-col>
+            </ion-row>
+        <ion-row>
+          <ion-col col-6>MMR: {{game.mmr}}</ion-col>
+          <ion-col col-6>Opponent MMR: {{game.opponentMmr}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>APM: {{game.apm}}</ion-col>
+            <ion-col col-6>SPM: {{game.spm}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>Supply Block: {{game.supplyBlock}}</ion-col>
+            <ion-col col-6>Spending Quotient: {{game.spendingQuotient}}</ion-col>
+          </ion-row>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Statistics</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row class="race-selector-container">
+    <ion-col col-4><button class="race-selector" ion-button>Protoss</button></ion-col>
+    <ion-col col-4><button class="race-selector" ion-button>Zerg</button></ion-col>
+    <ion-col col-4><button class="race-selector" ion-button>Terran</button></ion-col>
+  </ion-row>
+  <ion-card>
+    <ion-card-header>
+      Race played Statistics
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      Winrate by matchup
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Line Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

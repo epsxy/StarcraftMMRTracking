@@ -1,3 +1,20 @@
 page-list {
-
+    .card-header {
+        display: flex; 
+        justify-content: space-between;
+        &.won-game {
+            background-color: color($colors, primary);
+            &::after {
+                content: "WIN";
+            }
+        }
+        &.lost-game {
+            background-color: color($colors, danger);
+            &::after {
+                content: "LOSE";
+            }
+        }
+        color: white;
+        margin-bottom: .5em;
+    }
 }

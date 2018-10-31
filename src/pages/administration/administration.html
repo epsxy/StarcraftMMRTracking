@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Administration</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-row class="admin-race-selector-container">
+        <h2>Default race selection</h2>
+        <p><span class="race-selected-label">{{race}}</span> is the race that will be selected by default in statistics, and that will be proposed by default when uploading a new game.</p>
+        <ion-col col-4><button (click)="selectDefaultRace('Protoss')" class="race-selector" ion-button [disabled]="isDefaultProtossDisabled">Protoss</button></ion-col>
+        <ion-col col-4><button (click)="selectDefaultRace('Zerg')" class="race-selector" ion-button [disabled]="isDefaultZergDisabled">Zerg</button></ion-col>
+        <ion-col col-4><button (click)="selectDefaultRace('Terran')" class="race-selector" ion-button [disabled]="isDefaultTerranDisabled">Terran</button></ion-col>
+      </ion-row>
+</ion-content>
